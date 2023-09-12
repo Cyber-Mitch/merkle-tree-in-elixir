@@ -27,3 +27,21 @@ To create a Merkle Tree, use the `MerkleTree.new/1` function, providing a list o
 ```elixir
 transactions = ["Transaction 1", "Transaction 2", "Transaction 3"]
 tree = MerkleTree.new(transactions)
+```
+## Visualizing the Merkle Tree
+You can visualize the Merkle Tree using the MerkleTree.visualize/1 function. This will print the Merkle Root and leaf nodes to the console.
+```elixir
+MerkleTree.visualize(tree)
+```
+## Verifying a Transaction
+To verify whether a specific transaction or data element exists in the Merkle Tree, use the MerkleTree.verify/2 function. It returns true if the item is found in the tree and false otherwise.
+
+```elixir
+transaction_to_verify = "Transaction 3"
+is_verified = MerkleTree.verify(tree, transaction_to_verify)
+```
+## Use Cases
+
+- **Blockchain Technology:** Merkle Trees are a fundamental component of blockchain technology. They enable efficient and secure verification of transactions in a blockchain without the need to download the entire chain.
+
+- **Data Integrity Verification:** Merkle Trees are used to verify the integrity of data stored in distributed systems, ensuring that data has not been tampered with during transmission or storage.
